@@ -1,0 +1,32 @@
+%YAML:1.0
+---
+imu_topic: "/snappy_imu"
+image_topic: "/snappy_cam/stereo_l"
+camchain_file: "[PATH TO PROJECT]/kalibr_camchains/indoor_forward_camchain.yaml"
+bag_file: [PATH TO BAG FILE]
+
+start_idx: 0
+save_folder: "save_folder"
+lk_compare: NONE
+lk_type: PERSPECTIVE
+half_patch_size: 10
+pyr_levels: 3
+epsilon: 0.01
+max_iterations: 30
+ransac_thresh: 2.0 # This will be divided by the max focal length
+adaptive_thresh: 0.1
+timeoffset_std: 0
+
+max_features: 200
+feature_quality: 0.01
+feature_min_dist: 10
+
+undistort_images: 0
+normalize_images: 1
+replace_results: 1
+write_to_file: 1
+visualize: 1
+step_mode: 0
+get_new_keypoints: 1
+
+num_skip_frames: 1 # 1 = no skip, 2 = skip every second frame, 3 = skip every third frame, etc.

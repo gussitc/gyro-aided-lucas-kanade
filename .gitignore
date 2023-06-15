@@ -1,0 +1,8 @@
+build/
+.vscode
+output*/
+results*/
+figures*/
+__pycache__
+*parameter_scans*
+viz_lk*
