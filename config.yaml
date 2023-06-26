@@ -1,12 +1,12 @@
 %YAML:1.0
 ---
-imu_topic: "/snappy_imu"
-image_topic: "/snappy_cam/stereo_l"
-camchain_file: "[PATH TO PROJECT]/kalibr_camchains/indoor_forward_camchain.yaml"
-bag_file: [PATH TO BAG FILE]
+imu_topic: /snappy_imu
+image_topic: /snappy_cam/stereo_l
+camchain_file: /app/kalibr_camchains/indoor_forward_camchain.yaml
+bag_file: /app/datasets/indoor_forward_short.bag
 
 start_idx: 0
-save_folder: "save_folder"
+save_folder: save_folder
 lk_compare: NONE
 lk_type: PERSPECTIVE
 half_patch_size: 10

@@ -1,7 +1,24 @@
-1. Install ROS Noetic using the two line install http://wiki.ros.org/ROS/Installation/TwoLineInstall
+# Install and run
+This installation guide is intended for the Ubuntu operating system and has been tested on Ubuntu 20.04.
 
-2. Download the Drone racing dataset http://rpg.ifi.uzh.ch/datasets/uzh-fpv-newer-versions/v3/indoor_forward_7_snapdragon_with_gt.bag
+## Install Docker
+https://docs.docker.com/engine/install/
 
-3. Replace [PATH TO PROJECT] and [PATH TO BAG FILE] in config.yaml
+## Install Rocker
+```
+sudo apt install python3-rocker
+```
 
-4. Build and run the CMake target "tracker"
+## Build the Docker image
+Open a terminal and the change the directory to `gyro-aided-lucas-kanade`, then run the following command:
+```
+docker build . -t gyroaidedlucaskanade:latest
+```
+This step will take a while as it has to download the ROS Docker image and the dataset bag file.
+
+## Run the application in Docker container
+Run the following command in a terminal:
+```
+rocker --x11 gyroaidedlucaskanade:latest /app/build/tracker
+```
+This should launch windows displaying the image stream from the dataset with tracked features overlaid.
